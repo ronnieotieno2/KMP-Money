@@ -17,10 +17,14 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        val money = KmpMoney()
         setContent {
             KMPMoneyTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Text("Android")
+                    Text(
+                        money.greetings(),
+                        modifier = Modifier.padding(innerPadding)
+                    )
                 }
             }
         }
